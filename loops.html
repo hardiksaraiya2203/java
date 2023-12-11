@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+
+<body>
+    <ul id="display"></ul>
+    <script>
+
+        let d = ""
+
+        // for (let i = 1; i <= 4; i += 1) 
+        // {
+        //     for (let j = 1; j <= i; j += 1) {
+        //         d += j
+        //     }
+        //     d += "</br>"
+        //     document.getElementById("display").innerHTML += d
+        //     d = ""
+        // }
+        for (let i = 1; i <= 4; i += 1) 
+        {
+            if(i=1){
+                d+=" "
+            }
+            for (let j = 1; j <= i; j+=1) {
+                d += "*";
+            }
+            d += "</br>"
+            document.getElementById("display").innerHTML += d;
+            d = "";
+        }
+
+        // for (let i = 1; i <= 3; i += 1) {
+        //     for (let j = 1; j = 2; j += 1) {
+        //         d+="*";
+        //     }
+           
+        // }
+    </script>
+</body>
+
+</html>

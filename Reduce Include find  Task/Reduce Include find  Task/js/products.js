@@ -38,12 +38,18 @@ function display(p) {
 function butn(DisB) {
 
   let comp = DisB.reduce(function (pre, value, index) {
+    if(value.category=="men's clothing"){
+      value.category="mens clothing"
+    }
+    if(value.category=="women's clothing"){
+      value.category="womens clothing"
+    }
     if (pre.includes(value.category) == false) {
       pre.push(value.category);
     }
     return pre;
   }, []).map(function (value) {
-    return ` <button class="company-btn px-3 py-2 border-0 fw-bold" onclick="FilterData(${value})">${value}</button>`
+    return ` <button class="company-btn px-3 py-2 border-0 fw-bold" onclick="FilterData('${value}')">${value}</button>`
   });
   document.getElementById("companies").innerHTML = `<button class="company-btn px-3 py-2 border-0 fw-bold" onclick="All()">All</button>` + comp.join(" ");
 }
