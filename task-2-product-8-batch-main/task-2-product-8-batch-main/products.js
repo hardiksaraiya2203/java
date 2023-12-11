@@ -4,7 +4,7 @@ const products = [
     title: 'high-back bench',
     company: 'ikea',
     image:
-      'https://dl.airtable.com/.attachments/14ac9e946e1a02eb9ce7d632c83f742f/4fd98e64/product-1.jpeg',
+      'https://images.pexels.com/photos/130987/pexels-photo-130987.jpeg?auto=compress&cs=tinysrgb&w=1600',
     price: 9.99,
   },
   {
@@ -12,7 +12,7 @@ const products = [
     title: 'albany table',
     company: 'marcos',
     image:
-      'https://dl.airtable.com/.attachments/f3450755e165557344f7d6433242431e/93533098/product-1.jpeg',
+      'https://images.pexels.com/photos/890669/pexels-photo-890669.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     price: 79.99,
   },
   {
@@ -20,7 +20,7 @@ const products = [
     title: 'albany table',
     company: 'marcos',
     image:
-      'https://dl.airtable.com/.attachments/f3450755e165557344f7d6433242431e/93533098/product-1.jpeg',
+      'https://images.pexels.com/photos/1209776/pexels-photo-1209776.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     price: 788.99,
   },
   {
@@ -28,7 +28,7 @@ const products = [
     title: 'albany table',
     company: 'marcos',
     image:
-      'https://dl.airtable.com/.attachments/f3450755e165557344f7d6433242431e/93533098/product-1.jpeg',
+      'https://images.pexels.com/photos/1826387/pexels-photo-1826387.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     price: 1279.99,
   },
   {
@@ -36,7 +36,7 @@ const products = [
     title: 'accent chair',
     company: 'caressa',
     image:
-      'https://dl.airtable.com/.attachments/f292eaec4fea8a791b037c759ae559c9/2d5e34d5/product-4.jpeg',
+      'https://images.pexels.com/photos/7512608/pexels-photo-7512608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     price: 25.99,
   },
   {
@@ -44,7 +44,7 @@ const products = [
     title: 'wooden table',
     company: 'caressa',
     image:
-      'https://dl.airtable.com/.attachments/5b3ad76dfd6ca5e31810cb99141c7ede/69829b2f/pexels-dominika-roseclay-1139785.jpg',
+      'https://images.pexels.com/photos/276651/pexels-photo-276651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     price: 45.99,
   },
   {
@@ -52,7 +52,7 @@ const products = [
     title: 'dining table',
     company: 'caressa',
     image:
-      'https://dl.airtable.com/.attachments/06bbede65bd09196b4a81a8e7b59e683/8af0aeb5/product-8.jpg',
+      'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     price: 6.99,
   },
   {
@@ -60,7 +60,7 @@ const products = [
     title: 'sofa set',
     company: 'liddy',
     image:
-      'https://dl.airtable.com/.attachments/443aa7884207dae7c3cc127262a2f993/d4f33110/product-1.jpeg',
+      'https://images.pexels.com/photos/7512039/pexels-photo-7512039.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     price: 69.99,
   },
   {
@@ -68,7 +68,7 @@ const products = [
     title: 'modern bookshelf',
     company: 'marcos',
     image:
-      'https://dl.airtable.com/.attachments/a889b1928b134c2ca0b5bbca32ea9abf/65c8a9a6/product-7.jpg',
+      'https://images.pexels.com/photos/2228583/pexels-photo-2228583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     price: 8.99,
   },
   {
@@ -76,7 +76,7 @@ const products = [
     title: 'emperor bed',
     company: 'liddy',
     image:
-      'https://dl.airtable.com/.attachments/10fdf29ae17f2d1f98770ae42584d021/82b9403f/product-6.jpg',
+      'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1600',
     price: 21.99,
   },
   {
@@ -84,7 +84,7 @@ const products = [
     title: 'utopia sofa',
     company: 'marcos',
     image:
-      'https://dl.airtable.com/.attachments/6ac7f7b55d505057317534722e5a9f03/9183491e/product-3.jpg',
+      'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     price: 39.95,
   },
   {
@@ -92,7 +92,7 @@ const products = [
     title: 'entertainment center',
     company: 'liddy',
     image:
-      'https://dl.airtable.com/.attachments/da5e17fd71f50578d525dd5f596e407e/d5e88ac8/product-2.jpg',
+      'https://images.pexels.com/photos/8608229/pexels-photo-8608229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     price: 29.98,
   },
   {
@@ -100,7 +100,7 @@ const products = [
     title: 'albany sectional',
     company: 'ikea',
     image:
-      'https://dl.airtable.com/.attachments/05ecddf7ac8d581ecc3f7922415e7907/a4242abc/product-1.jpeg',
+      'https://images.pexels.com/photos/19239903/pexels-photo-19239903/free-photo-of-interior-of-a-modern-living-room.jpeg?auto=compress&cs=tinysrgb&w=1600',
     price: 10.99,
   },
   {
@@ -108,7 +108,7 @@ const products = [
     title: 'leather sofa',
     company: 'liddy',
     image:
-      'https://dl.airtable.com/.attachments/3245c726ee77d73702ba8c3310639727/f000842b/product-5.jpg',
+      'https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=1600',
     price: 9.99,
   },
 ];
@@ -125,32 +125,74 @@ const products = [
 // document.getElementById("products").innerHTML=disp.join(" ");
 display(products)
 
-let butn = products.map(function(value){
+let butn = products.reduce(function(pre,value,index){
+  if(pre.includes(value.company) == false){
+
+      pre.push(value.company);
+  }
+  return pre;
+},[]).map(function(value){
   return `<article class="companies" id="companies">
-  <button class="company-btn" onclick=filterData('${value.company}')>${value.company}</button>
+  <button class="company-btn" onclick=filterData('${value}')>${value}</button>
 </article>`
 })
 document.getElementById("companies").innerHTML=butn.join(" ");
 
+display(products);
+
+// document.getElementById("btn").innerHTML = comp.join(" ");
+
 
 function filterData(companies){
-  let p = products.filter(function(value){
-    return value.company == companies
-  });
-  display(p)
+
+    let p = products.filter(function(value){
+      return value.company == companies
+    });
+    display(p)
+
 }
 
 function display(p){
   let disp = p.map(function(value){
+
     return ` <article class="product">
     <img src=${value.image} class="product-img img" alt="" />
     <footer>
       <h5 class="product-name">${value.title}</h5>
       <span class="product-price">${value.price}</span>
+      <span class="product-price">${value.company}</span>
     </footer>
   </article>`
   })
   document.getElementById("products").innerHTML = disp.join(" ");
+}
+
+// Sorting 
+function AtoZ()
+{
+  products.sort(function(a,b){
+    if (a.title > b.title){
+      return 1;
+    }
+    else{
+      return -1;
+    }
+    // return a.company - b.company;
+  });
+  display(products);
+}
+function ZtoA()
+{
+  products.sort(function(a,b){
+    if (a.price > b.price){
+      return -1;
+    }
+    else{
+      return 1;
+    }
+    // return b.company - a.company;
+  });
+  display(products);
 }
 
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="d"></p>
+
+    <script>
+        let data = [1, 2, 3, 1, 2]
+        
+
+        // reduce 
+        // let d = data.reduce(function(pre,value,index){
+        //     return pre+value
+        // },0)
+        // document.getElementById("d").innerHTML = d
+        
+        // includes 
+        // let a = data.includes(4)
+        // document.getElementById("d").innerHTML = a
+        
+        
+        
+        // let h = data.reduce(function(pre,value,index){
+        //     if(pre.includes(value) == false){
+
+        //         pre.push(value);
+        //     }
+        //     return pre;
+        // },[])
+        // document.getElementById("d").innerHTML = h
+        
+        let d = data.reduce(function(pre,value,index){
+            if(data.indexOf(value) != data.lastIndexOf(value))
+            {
+                if(pre.includes(value)== false)
+                {
+                    pre.push(value);
+                }
+            }
+            return pre;
+        },[])
+        document.getElementById("d").innerHTML = d
+        console.log(d)
+    </script>
+</body>
+
+</html>

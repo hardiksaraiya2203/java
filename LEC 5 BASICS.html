@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if,else,sorting</title>
+</head>
+<body>
+    <p id="if-else"></p>
+    <script>
+        // normal if-else 
+        let d = 19;
+        if (d==20){
+            console.log('it is positive')
+            document.getElementById("if-else").innerHTML = "it is positive"
+        }
+        else{
+            console.log('it is negative')
+            document.getElementById("if-else").innerHTML = "it is negative"
+        }
+        // if-else Ladder
+        if (d<18){
+            document.getElementById("if-else").innerHTML = "you can't vote"
+        }
+        else if(d==18){
+            document.getElementById("if-else").innerHTML = "you can apply for voting card"
+        }
+        else{
+            document.getElementById("if-else").innerHTML = "you can vote"
+
+        }
+    </script>
+
+</body>
+</html>

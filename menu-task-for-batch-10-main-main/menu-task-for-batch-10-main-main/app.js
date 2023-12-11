@@ -79,6 +79,14 @@ const menu = [
     img: "./images/item-10.jpeg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
+  {
+    id: 11,
+    title: "bison steak",
+    category: "All",
+    price: 22.99,
+    img: "./images/item-10.jpeg",
+    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+  },
 ];
 
 
@@ -104,13 +112,40 @@ const menu = [
 display(menu)
 
 
-let timing = menu.map(function (value) {
-  return `<button type="button" class="filter-btn" data-id="all" onclick="filterdata('${value.category}')">${value.category}</button>`
+// reduced function 
+let timing = menu.reduce(function (pre, value, index) {
+  if (pre.includes(value.category) == false) {
+    pre.push(value.category)
+  }
+  return pre;
+}, []).map(function (value) {
+  return `<button type="button" class="filter-btn" data-id="all" onclick="filterdata('${value}')">${value}</button>`
 })
-document.getElementById("btn").innerHTML = timing.join(" ");
+document.getElementById("btn").innerHTML = timing.join(" ") + `<button type="button" class="filter-btn" data-id="all" onclick="HIGHtoLOW()">High to Low</button>
+<button type="button" class="filter-btn" data-id="all" onclick="LOWtoHIGH()">Low to High</button>`;
 
-
-
+function HIGHtoLOW() {
+  menu.sort(function (a, b) {
+    if (a.price > b.price ) {
+      return -1;
+    }
+    else {
+      return 1;
+    }
+  });
+  display(menu);
+}
+function LOWtoHIGH() {
+  menu.sort(function (a, b) {
+    if (a.price > b.price) {
+      return 1;
+    }
+    else {
+      return -1;
+    }
+  })
+  display(menu);
+}
 
 function filterdata(categroy) {
   let p = menu.filter(function (value) {
@@ -118,6 +153,7 @@ function filterdata(categroy) {
   });
   display(p)
 }
+
 
 function display(p) {
   let dis = p.map(function (value) {

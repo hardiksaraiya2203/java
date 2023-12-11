@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SORTING</title>
+</head>
+
+<body>
+    <button id="btn" onclick="sorted()">sort</button>
+    <script>
+        // a = [1,2,3,4,5,6,7]
+        // a.sort()
+        // console.log(a)
+        // a.sort().reverse()
+        // console.log(a)
+
+
+
+        // b = [1,22,333,555,44,777]
+        // b.sort()
+        // console.log(b)
+
+        // b.sort(function(a,b){
+        //     return a-b;
+        // })
+        // console.log(b)
+
+        // b.sort(function(a,b){
+        //     return b-a;
+        // })
+        // console.log(b)
+
+        // b.sort(function(a,b){
+        //     return 1;
+        // })
+        // console.log(b)
+
+        // b.sort(function(a,b){
+        //     return -1;
+        // })
+        // console.log(b)
+
+        // c = [1,22,55,444,555,666666,777]
+        // c.sort(function(a,b){
+        //     if(a>b){
+        //         console.log("a------   " + a);
+        //         console.log("b------   " + b);
+        //         return 1;
+        //     }
+        //     else{
+        //         return -1;
+        //     }
+        // })
+        // console.log("c------   " + c)
+
+        // d = ["vadodara","anand","ahemdabad","pune"]
+        // d.sort(function(a,b){
+        //     if (a.length > b.length){
+        //         return 1;
+        //     }
+        //     else {
+        //         return -1;
+        //     }
+        // })
+        // console.log(d)
+
+
+        const obj = [
+            {
+                id: 1,
+                name: "hardik",
+            },
+            {
+                id: 2,
+                name: "saraiya",
+            },
+        ]
+        function sorted() {
+
+            obj.sort(function (a, b) {
+                // if (a.id > b.id){
+                //     return 1;
+                // }
+                // else{
+                //     return -1;
+                // }
+                return b.id-a.id
+            })
+            console.log(obj)
+        }
+        // sorted();
+    </script>
+</body>
+
+</html>
