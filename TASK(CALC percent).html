@@ -153,11 +153,7 @@
             <th>Subject 6</th>
             <th>Total</th>
             <th>Percentage</th>
-            <!-- <th>Class</th> -->
-        </tr>
-        <tr id="tabledata">
-            <!-- <td></td> -->
-        </tr>
+
     </table>
 
     <script>
@@ -175,7 +171,22 @@
             let sum = parseInt(Sub1) + parseInt(Sub2) + parseInt(Sub3) + parseInt(Sub4) + parseInt(Sub5) + parseInt(Sub6)
             let Percentage = (sum * 100) / 600
 
-            info.push(Fname, RollNo, Sub1, Sub2, Sub3, Sub4, Sub5, Sub6, sum, Percentage)
+            let h = {
+
+                fname : Fname,
+                rollNo : RollNo,
+                sub1 : Sub1,
+                sub2 : Sub2,
+                sub3 : Sub3,
+                sub4 : Sub4,
+                sub5 : Sub5,
+                sub6 : Sub6,
+                Sum   : sum,
+                percentage : Percentage,
+                
+            }
+
+            info.push(h)
 
 
             display()
@@ -183,9 +194,29 @@
 
         function display() {
             let d = info.map(function (value) {
-                return `<td>${value}</td>`
+                return `<tr><td>${value.fname}</td>
+                    <td>${value.rollNo}</td>
+                    <td>${value.sub1}</td>
+                    <td>${value.sub2}</td>
+                    <td>${value.sub3}</td>
+                    <td>${value.sub4}</td>
+                    <td>${value.sub5}</td>
+                    <td>${value.sub6}</td>
+                    <td>${value.sum}</td>
+                    <td>${value.percentage}</td></tr>`
             });
-            document.getElementById("tabledata").innerHTML = d.join(" ");
+            document.getElementById("myTable").innerHTML =
+            `<tr>
+            <th>Name</th>
+            <th>Roll No.</th>
+            <th>Subject 1</th>
+            <th>Subject 2</th>
+            <th>Subject 3</th>
+            <th>Subject 4</th>
+            <th>Subject 5</th>
+            <th>Subject 6</th>
+            <th>Total</th>
+            <th>Percentage</th>` +  d.join(" ");
 
         }
     </script>
