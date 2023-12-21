@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        img{
+            height: 100px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- event capturing and event bubbling which is called as propogation -->
+    <ul id="images">
+        <li><img src="logo.jpg" alt="#" id="logo"></li>
+        <li><img src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg" alt="#" id="online"></li>
+        <li><img src="logo.jpg" alt="#" id="logo"></li>
+        <li><img src="logo.jpg" alt="#" id="logo"></li>
+        <li><a href="https://www.facebook.com/"><img src="logo.jpg" alt="#" id="fb"></a></li>
+    </ul>
+
+    <script>
+        document.getElementById('images').addEventListener('click',function(){
+            console.log('ul clicked');
+        },false)
+        document.getElementById('online').addEventListener('click',function(e){
+            console.log('image clicked');
+            console.log(e);
+            e.stopPropagation()
+        },false)
+        document.getElementById('fb').addEventListener('click',function(e){
+            console.log('facebook open');
+            e.stopPropagation()
+            e.preventDefault()
+        },false)
+
+        // false would come in bubbling event which come from below to top 
+        //propogation can be stopped using e.stopPropagation()
+    </script>
+</body>
+</html>

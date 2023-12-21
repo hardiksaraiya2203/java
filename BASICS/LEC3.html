@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested IF</title>
+</head>
+<body>
+    <script>
+        let department = 1;
+        let rating = 2;
+        let salary = 20000;
+
+        if(department == 1){
+            if(rating == 1){
+                console.log(salary*0.02)
+            }
+            else if(rating == 2){
+                console.log(salary*0.04)
+            }
+            else if(rating == 3){
+                console.log(salary*0.05)
+            }
+            else if(rating == 4){
+                console.log(salary*0.10)
+            }
+            else if(rating == 5){
+                console.log(salary*0.15)
+            }
+        }
+        if(department == 2){
+            if(rating == 1){
+                console.log(salary*0.04)
+            }
+            else if(rating == 2){
+                console.log(salary*0.08)
+            }
+            else if(rating == 3){
+                console.log(salary*0.10)
+            }
+            else if(rating == 4){
+                console.log(salary*0.20)
+            }
+            else if(rating == 5){
+                console.log(salary*0.35)
+            }
+        }
+
+        let basic = 100000;
+        let city = 2;
+        let findclim = 0;
+
+        if(city == 1){
+            findclaim = console.log(basic*0.90)
+        }
+        else if(city == 9){
+            findclaim = console.log(basic*0.50)
+        }
+        else{
+            findclaim = console.log(basic*0.20)
+        }
+
+    </script>
+</body>
+</html>

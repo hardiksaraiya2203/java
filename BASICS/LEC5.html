@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects,events</title>
+</head>
+
+<body>
+    <button onclick="fullName()">FullName</button>
+    <!-- <button ondblclick="fullName()">FullName</button> -->
+
+    <input type="text" id="fname" onkeypress="handleInput(event)">
+    <input type="text" id="lname" onkeypress="handleInput1(event)">
+    <input type="text" id="name" onblur="showUpperCase()">
+    <input type="number" id="Pincode" placeholder="Enter Pincode" onkeypress="handleInput1(event)">
+    <div id="display"></div>
+    <div id="display1"></div>
+    <div id="dis"></div>
+    <script>
+
+        let company =
+        {
+            name: 'civika',
+            city: 'vadodara',
+            contact: 7990314048,
+        }
+
+        document.getElementById("dis").innerHTML = company;
+        console.log(company.city, company.name);
+
+        let companies = [
+
+            {
+                name: 'civika',
+                city: 'vadodara',
+                contact: 7990314048,
+            }
+        ]
+
+        console.log(companies[0].city);
+
+
+        const fullName = () => {
+            document.getElementById("display").innerHTML = document.getElementById("fname").value + " " + document.getElementById("lname").value
+        }
+
+        const handleInput = (e) => {
+            if (e.key >= 'A' && e.key <= 'Z') {
+                e.returnValue = true
+            }
+            else if (e.key >= 'a' && e.key <= 'z') {
+                e.returnValue = true
+            }
+            else {
+                e.returnValue = false
+
+            }
+        }
+        const handleInput1 = (e) => {
+            if (e.key >= '0' && e.key <= '9') {
+                e.returnValue = true
+                if ((document.getElementById("Pincode").value).length >= 6){
+                    e.returnValue = false
+                }
+            }
+            else {
+                e.returnValue = false
+
+            }
+        }
+
+        function showUpperCase() {
+
+            let x = document.getElementById("name");
+            x.value = x.value.toUpperCase();
+        }
+
+    </script>
+</body>
+
+</html>

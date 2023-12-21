@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll</title>
+</head>
+<body>
+    <script>
+        const payrollcalculation = (payable)=>{
+            let hra = basicSalary*0.50;
+            let da = basicSalary*0.25;
+            let totalsalary = hra + da + basicSalary;
+            let tax = totalsalary*0.10;
+            let payable = totalsalary-tax;
+
+            return payable;
+        }
+        let d = payrollcalculation(300000);
+        console.log(d)
+    </script>
+</body>
+</html>

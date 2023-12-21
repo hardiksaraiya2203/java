@@ -9,38 +9,79 @@
 
 <body>
     <ul id="display"></ul>
+    <ul id="disp"></ul>
+    <ul id="dis"></ul>
+    <ul id="di"></ul>
+    <ul id="d"></ul>
     <script>
 
-        let d = ""
-
-        // for (let i = 1; i <= 4; i += 1) 
-        // {
-        //     for (let j = 1; j <= i; j += 1) {
-        //         d += j
-        //     }
-        //     d += "</br>"
-        //     document.getElementById("display").innerHTML += d
-        //     d = ""
-        // }
+        a = ""
         for (let i = 1; i <= 4; i += 1) 
         {
-            if(i=1){
-                d+=" "
-            }
-            for (let j = 1; j <= i; j+=1) {
-                d += "*";
-            }
-            d += "</br>"
-            document.getElementById("display").innerHTML += d;
-            d = "";
+            for (let j = 1; j <= i; j += 1) {
+                    a += j
+                }
+                a += "</br>"
+                document.getElementById("display").innerHTML += a
+            a = ""
         }
 
-        // for (let i = 1; i <= 3; i += 1) {
-        //     for (let j = 1; j = 2; j += 1) {
-        //         d+="*";
-        //     }
-           
-        // }
+        b = ""
+        for (let i = 4; i >= 1; i--) 
+        {
+            for (let j = i; j >= 1; j--) {
+                b += j;
+            }
+            b += "</br>"
+            document.getElementById("disp").innerHTML += b;
+            b = "";
+        }
+
+        c = ""
+        for (let i = 4; i >= 1; i--) 
+        {
+            for (let j = i; j >= 1; j--) {
+                c += i;
+            }
+            c += "</br>"
+            document.getElementById("dis").innerHTML += c;
+            c = "";
+        }
+
+        d = ""
+        for (let i = 1; i <= 4; i++) 
+        {
+            for (let j = 1; j <= i; j++) {
+                d += i;
+            }
+            d += "</br>"
+            document.getElementById("di").innerHTML += d;
+            d = "";
+        }
+        
+        
+        //    - - *
+        //    - * *
+        //    * * *
+        let e = ""
+        
+        for (let i = 1; i <= 4; i++) {
+
+            for (let j = i; j < 4; j++) {
+                e += "&nbsp"
+            }
+            for (let k = i; k >= 1; k--) {
+                e += "*"
+            }
+            e += "</br>"
+            document.getElementById("d").innerHTML += e;
+            e = "";
+        }
+
+
+
+
+        
     </script>
 </body>
 

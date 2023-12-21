@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        .droptarget {
+            width: 100px;
+            height: 35px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="fname" onchange="HandleInput(event)">
+    <input type="text" name="lname" onchange="HandleInput(event)">
+
+    <input type="button" value="Submit" onclick="display()">
+    <input type="text" name="lname" oncut="noCut(event)">
+    <input type="text" name="lname" onCopy="noCopy(event)">
+
+
+
+    <h1>HTML DOM Events</h1>
+    <h2>The ondrag Event</h2>
+    <p>Drag the text up and down between the two rectangles:</p>
+    <div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">drag me</p>
+        <!-- <img src="logo.jpg" id="dragtarget" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" style="width: 100%;" alt=""> -->
+    </div>
+    <p id="demo"></p>
+    <div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <script>
+        
+        // DRAG AND DROP 
+        function dragStart(e) {
+            console.log(event)
+            e.dataTransfer.setData("abc", e.target.id);
+        }
+        
+        function dragging(e) {
+            document.getElementById("demo").innerHTML = "The p element is being dragged";
+        }
+
+        function allowDrop(e) {
+            e.preventDefault();
+        }
+
+        function drop(e) {
+            // e.preventDefault();
+            const data = e.dataTransfer.getData("abc");
+            e.target.appendChild(document.getElementById(data));
+            document.getElementById("demo").innerHTML = "The p element was dropped";
+        }
+
+
+
+
+
+
+        obj = {}
+
+        function HandleInput(e) {
+            console.log(e)
+            obj[e.target.name] = e.target.value
+        }
+        function display() {
+            console.log(obj)
+        }
+
+        function noCut(e) {
+            e.preventDefault();
+        }
+        function noCopy(e) {
+            e.preventDefault();
+        }
+
+
+
+    </script>
+</body>
+
+</html>
