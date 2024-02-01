@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRING FUNCTIONS</title>
+</head>
+
+<body>
+    <div id="ReadMore" onclick="ReadMore()"></div>
+    <script>
+
+        let d = "this is javascript this is javascript this is javascript this is javascript this is javascript this is javascriptthis"
+
+        // sliced = ""
+        // function ReadMore()
+        // {
+        //     h = (d.slice(0,20))
+        //     sliced+=h
+        //     console.log(sliced);
+        // }
+
+        let isReadMore = true;
+        function ReadMore()
+        {
+            if(isReadMore){
+                document.getElementById('ReadMore').innerHTML = d.slice(0,20).concat(" ...Read More")
+            }
+            else{
+                document.getElementById('ReadMore').innerHTML = d.concat(" ...Read Less")
+            }
+            isReadMore = !isReadMore
+        }
+        ReadMore();
+
+
+    </script>
+</body>
+
+</html>

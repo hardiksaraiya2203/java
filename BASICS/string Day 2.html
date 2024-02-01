@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="number"></p>
+    <p id="string"></p>
+    <script>
+
+        let number = "7990314048"
+        let name = "Hardik Umesh Saraiya"
+
+        function display()
+        {
+            let a = number.slice(-3)
+            
+            let b = a.padStart(number.length,"x")
+            document.getElementById('number').innerHTML = b
+        }
+        
+        display()
+        
+        function display1()
+        {
+            let a = name.split(" ")
+            console.log(a)
+            
+            // console.log(a[0][0]+a[1][0]+a[2][0]);
+            document.getElementById('string').innerHTML = a[0][0]+a[1][0]+a[2][0]
+            
+        }
+        display1()
+
+    </script>
+</body>
+</html>

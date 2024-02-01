@@ -7,8 +7,8 @@ fetch("https://fakestoreapi.com/products").then(function (value) {
 })
 
 
-function display(p) {
-  let dis = p.map(function (value) {
+function display(b) {
+  let dis = b.map(function (value) {
 
     return `<div class=" col-sm-6  col-md-4 p-2" >
     <div class="product-card">
@@ -65,21 +65,22 @@ function FilterData(compa) {
   let p = a.filter(function (value) {
     return value.category == compa;
   });
-
   display(p);
+  // return console.log(p);
+  // return p;
 }
 
-function HighToLow(a) {
 
-  a.sort(function (a, b) {
-    if (a.price > b.price) {
-      return -1;
-    }
-    else {
-      return 1;
-    }
-  });
-  display(a);
+function HighToLow(a) {
+    a.sort(function (a, b) {
+      if (a.price > b.price) {
+        return -1;
+      }
+      else {
+        return 1;
+      }
+    });
+    display(a);
 
 };
 
