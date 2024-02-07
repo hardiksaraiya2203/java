@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="image/FeviconLogo.svg">
+    <title>Registration Page</title>
+    <script src="https://kit.fontawesome.com/52ca9e0df4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Product
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Specification</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Register.html">Registration</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Log In</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="container mb-3">
+
+            <div class="row justify-content-between align-items-center px-5 py-2">
+                <div class="col logInForm">
+                    <form action="#">
+                        <h1 class="display-6">Register</h1>
+                        <div class="row ">
+                            <div class="col-md-6 wrapper">
+                                <label for="Fname">First Name</label>
+                                <input type="text" placeholder="Enter Your First Name" name="firstName" required>
+                            </div>
+                            <div class="col-md-6 wrapper">
+                                <label for="Lname">Last Name</label>
+                                <input type="text" placeholder="Enter Your Last Name" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-6 wrapper">
+                                <label for="Title">Title</label>
+                                <input type="text" placeholder="Enter Title Name" name="title" required>
+                            </div>
+                            <div class="col-md-6 wrapper">
+                                <label for="Email">Email</label>
+                                <input type="text" placeholder="Enter Your Email" name="email" required>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 wrapper">
+                                <label for="Psw">Create your New Password</label>
+                                <input type="text" placeholder="Enter Password" name="password" required>
+                            </div>
+                            <div class="col-md-6 wrapper">
+                                <label for="cPsw">Confirm Password</label>
+                                <input type="text" placeholder="Confirm Password" name="confirmPassword" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="no">
+                                <input type="checkbox" checked="checked" name="acceptTerms" required> I accept all terms
+                                and conditions.
+                            </label>
+                        </div>
+                        <!-- <button class="btn btn-success" type="button">Submit</button> -->
+                        <input type="button" class="btn btn-success" value="Save" onclick="saveInformation()">
+                        <!-- <a class="register" href="index.html">... Or Log IN</a> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="js/script.js"></script> -->
+
+    <script>
+
+        function saveInformation() {
+            let obj = document.getElementsByTagName('input');
+
+            let p = {}
+
+            for (let i = 0; i < obj.length; i++) {
+                if (obj[i].type == "text") {
+                    p[obj[i].name] = obj[i].value;
+                }
+                else if (obj[i].type == "checkbox") {
+                    p[obj[i].name] = obj[i].checked;
+                }
+            }
+
+            fetch('https://real-pear-fly-kilt.cyclic.app/accounts/register', {
+                method: "POST",
+                body: JSON.stringify(p),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(y => y.json())
+                .then(y => {
+                    console.log(y);
+                })
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

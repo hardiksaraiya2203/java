@@ -18,7 +18,12 @@
     <label for="pwd" class="form-label">Password:</label>
     <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
   </div>
+  <div class="mb-3">
+    <label for="search" class="form-label">Search</label>
+    <input type="text" class="form-control" id="search" placeholder="Search Here" name="search">
+  </div>
   <button type="button" class="btn btn-primary" onclick="saveInfo()">Submit</button>
+  <button type="button" class="btn btn-primary" onclick="search()">Search</button>
 
   <table class="table table-bordered">
 
@@ -27,8 +32,10 @@
     </tbody>
   </table>
 
+
   <script>
 
+    let i = -1;
     function saveInfo() {
 
       let array = JSON.parse(localStorage.getItem('userinfo')) || [];
@@ -36,12 +43,20 @@
         "email": document.getElementById('email').value,
         "password": document.getElementById('pwd').value
       }
-      array.push(obj);
-      localStorage.setItem('userinfo', JSON.stringify(array))
+      if (i < 0) {
+        array.push(obj);
+      }
 
+      else {
+        array[i] = obj;
+      }
+
+      localStorage.setItem('userinfo', JSON.stringify(array));
+
+      i = -1;
       displayInfo();
     }
-    displayInfo();
+
     function displayInfo() {
       let array = JSON.parse(localStorage.getItem('userinfo')) || [];
 
@@ -51,27 +66,53 @@
         <td>${value.email}</td>
         <td>${value.password}</td>
         <td><button class='btn btn-primary' onclick="removeitem(${index})">Delete</button></td>
-        <td><button class='btn btn-primary'>Edit</button></td>
+        <td><button class='btn btn-primary' onclick="editItems(${index})">Edit</button></td>
         
       </tr>`
-      })
-      
-      document.getElementById('display').innerHTML = p.join(" ")
-      
+      });
+
+      document.getElementById('display').innerHTML = p.join(" ");
+
     }
     function removeitem(index) {
       let array = JSON.parse(localStorage.getItem('userinfo')) || [];
 
-      array.splice(index,1);
+      array.splice(index, 1);
 
       localStorage.setItem('userinfo', JSON.stringify(array));
 
       displayInfo();
     }
 
-    function editItems() {
+    function editItems(index) {
+      let array = JSON.parse(localStorage.getItem('userinfo')) || [];
       
+      document.getElementById("email").value = array[index].email;
+      document.getElementById("pwd").value = array[index].password;
+      
+      i = index;
     }
+    
+    displayInfo()
+    
+    // function search()
+    // {
+    //   let array = JSON.parse(localStorage.getItem('userinfo')) || [];
+
+    //   let search_value = document.getElementById("search").value;
+
+    //   console.log(search_value);
+    //   console.log(array)
+    //   let s = array.filter(function(value,index) {
+    //     if(value.email == search_value)
+    //     {
+    //       return ;
+    //     }
+    //   });
+    //   console.log(s);
+
+    // }
+
   </script>
 </body>
 

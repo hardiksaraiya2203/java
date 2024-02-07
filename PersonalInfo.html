@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Info</title>
+</head>
+
+<body>
+
+    <form action="">
+        <input type="text" name="firstName" id="firstName" placeholder="Enter First Name">
+        <input type="text" name="lastName" id="lastName" placeholder="Enter Last Name">
+        <input type="number" name="contactNo" id="contactNo" placeholder="Enter Contact No.">
+        <button type="button" onclick="SaveInfo()">Save</button>
+
+        <input type="text" id="SearchValue" placeholder="search here">
+        <input type="submit" value="Search" onclick="Search()">
+        <!-- <input type="submit" value="Clear" onclick="Clear()"> -->
+    </form>
+    <table>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+
+    <script>
+
+        let ind = -1;
+
+        function SaveInfo() {
+            let Pdetails = JSON.parse(localStorage.getItem('Userinfo')) || [];
+
+            let obj = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                contactNo: document.getElementById('contactNo').value
+            }
+            if (ind < 0) {
+                Pdetails.push(obj);
+            }
+
+            else {
+                Pdetails[ind] = obj;
+            }
+
+            localStorage.setItem('Userinfo', JSON.stringify(Pdetails));
+
+            ind = -1;
+
+            DisplayInfo();
+        }
+
+        function DisplayInfo() {
+            let Pdetails = JSON.parse(localStorage.getItem('Userinfo')) || [];
+
+            displayOnlyHTML(Pdetails)
+        }
+        function displayOnlyHTML(Pdetails) {
+            let mapped = Pdetails.map((value, index) => {
+                return `<tr>  
+                    <td>${value.firstName}</td>
+                    <td>${value.lastName}</td>
+                    <td>${value.contactNo}</td>
+                    <td><button class='btn btn-primary' onclick="DeleteInfo(${index})">Delete</button></td>
+                    <td><button class='btn btn-primary' onclick="editInfo(${index})">Edit</button></td>
+        
+                    </tr>`
+            });
+
+            document.getElementById('tbody').innerHTML = mapped.join(" ")
+        }
+
+        function DeleteInfo(index) {
+            let Pdetails = JSON.parse(localStorage.getItem('Userinfo')) || [];
+
+            Pdetails.splice(index, 1);
+
+            localStorage.setItem('Userinfo', JSON.stringify(Pdetails));
+
+            DisplayInfo();
+        }
+
+        function editInfo(index) {
+            let Pdetails = JSON.parse(localStorage.getItem('Userinfo')) || [];
+
+            document.getElementById('firstName').value = Pdetails[index].firstName;
+            document.getElementById('lastName').value = Pdetails[index].lastName;
+            document.getElementById('contactNo').value = Pdetails[index].contactNo;
+
+            ind = index;
+        }
+
+        function Search() {
+            let p = document.getElementById('SearchValue').value;
+
+            let Pdetails = JSON.parse(localStorage.getItem('Userinfo')) || [];
+
+            let filteredItem = Pdetails.filter(function (value) {
+                return value.firstName.includes(p) == true;
+            })
+
+            displayOnlyHTML(filteredItem)
+        }
+        
+        // function Clear() {
+        //     document.getElementById('SearchValue').value = "";
+        //     DisplayInfo();
+        // }
+        DisplayInfo()
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account details</title>
+    <style>
+        /* .thead tr{
+            background-color: #00000000;
+            color: white;
+        } */
+        /* tbody tr{
+            background-color: #cfe2ff;
+            color: black;
+        } */
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead class="thead">
+            <tr>
+                <td>id</td>
+                <td>firstName</td>
+                <td>lastName</td>
+                <td>Email</td>
+            </tr>
+        </thead>
+        <tbody id="display">
+
+        </tbody>
+    </table>
+    <script>
+
+        const token = JSON.parse(localStorage.getItem('token'));
+
+        fetch('https://real-pear-fly-kilt.cyclic.app/accounts', {
+            headers: {
+                'Authorization': "Bearer " + token.jwtToken
+            }
+        }).then(y => y.json())
+            .then(y => {
+
+                let display = y.map(function(value){
+                    return `<tr>
+                        <td>${value.id}</td>
+                        <td>${value.title}</td>
+                        <td>${value.firstName}</td>
+                        <td>${value.lastName}</td>
+                        <td>${value.email}</td>
+                        </tr>`
+                });
+
+                document.getElementById('display').innerHTML = display.join(" ");
+            })
+
+
+
+
+    </script>
+</body>
+
+</html>

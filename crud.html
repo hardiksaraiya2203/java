@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+</head>
+
+<body onload="ReadAll()">
+    <div class="container">
+        <div class="form_container">
+            <form action="" class="create_form" style="display: none;">
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                <button type="button" onclick="create()">Create</button>
+            </form>
+            <form action="" class="update_form" style="display: none;">
+                <input type="text" class="form-control" id="dataid" hidden>
+                <input type="email" class="form-control" id="uemail" placeholder="Enter email" name="email">
+                <input type="password" class="form-control" id="upwd" placeholder="Enter password" name="pwd">
+                <button type="button" onclick="update()">update</button>
+            </form>
+            <div class="add_div">
+                <button onclick="add()">ADD +</button>
+            </div>
+            <table>
+                <thead>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Action</th>
+                </thead>
+                <tbody class="table_data">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let data = [
+            { id: 1, email: "hardiksaraiya24@gmail.com", password: "7990314048" },
+            { id: 2, email: "hardiksaraiya2203@gmail.com", password: "9428148661" }
+        ]
+
+        function ReadAll() {
+            localStorage.setItem("object", JSON.stringify(data))
+            let tabledata = document.querySelector(".table_data");
+
+            let object = localStorage.getItem("object")
+            let objectdata = JSON.parse(object)
+            let elements = ""
+
+            objectdata.map(record => {
+                elements += `<tr>
+                    
+                    <td>${record.email}</td>
+                    <td>${record.password}</td>
+                    <td>
+                        <button onclick="edit(${record.id})">Edit</button>
+                        <button onclick="delete(${record.id})">Delete</button>
+                    </td>
+                    </tr>`
+            })
+            tabledata.innerHTML = elements;
+
+        }
+        function add() {
+            document.querySelector(".create_form").style.display = "block";
+            document.querySelector(".add_div").style.display = "none";
+        }
+        function create() {
+            let Email = document.querySelector("#email").value;
+            let Password = document.querySelector("#pwd").value;
+
+            let newobj = { id: 3, email: Email, password: Password };
+
+            data.push(newobj);
+
+            document.querySelector(".create_form").style.display = "none";
+            document.querySelector(".add_div").style.display = "block";
+
+            ReadAll();
+        }
+
+        function edit(id) {
+            document.querySelector(".update_form").style.display = "block";
+            let obj = data.find(rec => rec.id === id);
+            document.querySelector("#uemail").value = obj.email;
+            document.querySelector("#upwd").value = obj.password;
+            document.querySelector("#dataid").value = obj.id;
+        }
+        function update() {
+            let id = parseInt(document.querySelector("#dataid").value);
+            let email = document.querySelector("#uemail").value;
+            let password = document.querySelector("#upwd").value;
+
+            let index = data.findIndex(rec => rec.id === id);
+            data[index] = { id, email, password }
+            document.querySelector(".update_form").style.display = "none";
+            ReadAll()
+        }
+    </script>
+</body>
+
+</html>
