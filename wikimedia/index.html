@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wikimedia</title>
+</head>
+
+<body>
+    <input type="text" id="searchValue">
+    <button onclick="searchInfo()">Search</button>
+    <table>
+        <tbody id="dis"></tbody>
+    </table>
+
+
+    <script>
+        function searchInfo() {
+            let searchValue = document.getElementById('searchValue').value;
+            let myArray1 = []
+            let index = 0;
+
+            fetch('https://en.wikipedia.org/w/api.php?action=query&list=search&srlimit=20&format=json&origin=*&srsearch=' + searchValue)
+                .then(y => y.json())
+                .then(y => {
+                    myArray1.push(y)
+                    console.log(myArray1);
+                    display();
+                });
+
+            display = () => {
+                // let myArray2 = []
+                let myArray2 = myArray1.map(function (value) {
+                    // return myArray2.push(value.query.search)
+                    return value.query.search
+                });
+                console.log(myArray2);
+
+                let displayData = myArray2.map(function(v)
+                {
+                    // return `<tr><td>${v.suggestion}</td></tr>`
+                    return `<tr><td>${v.title}</td></tr>`
+                    // return v;
+                    // return v[index];
+                })
+                console.log(displayData);
+
+                document.getElementById('dis').innerHTML = displayData.join(" ");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class example using api</title>
+</head>
+
+<body>
+    <script>
+        class CallAPI {
+            constructor(path) {
+                this.URLPATH = path;
+            }
+            fetchData() {
+                return fetch(this.URLPATH).then(y => y.json());
+                // .then(y=>{
+                //     console.log(y)
+                // })
+            }
+
+            displayData(data) {
+                console.log(data)
+            }
+        }
+
+        const p = new CallAPI('https://jsonplaceholder.typicode.com/comments')
+
+        p.fetchData().then(y => {
+            p.displayData(y);
+        });
+        const p1 = new CallAPI('https://jsonplaceholder.typicode.com/users')
+
+        p1.fetchData().then(y => {
+            p1.displayData(y);
+        });
+    </script>
+</body>
+
+</html>

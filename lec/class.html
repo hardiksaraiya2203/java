@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class arrow function</title>
+</head>
+
+<body>
+    <button id="btn" name="Save">Save</button>
+    <div id="display"></div>
+    <script>
+        // const display = () =>
+        // {
+        //     console.log(3);
+        // }
+        // display()
+
+        // const display = () => 3
+
+        // console.log( display());
+
+        // const display = () =>
+        // {
+        //     console.log(3);
+        // }
+        // console.log(display());
+
+        // arrow using args 
+        // const display = (name) => {
+        //     console.log(name);
+        // }
+        // display('hardik')
+
+        // CLASS 
+
+        class display
+        {
+            name = 'test';
+            // dis ()
+            // {
+            //     document.getElementById('display').innerHTML = this.name;
+            // }
+            disarrow = () =>
+            {
+                document.getElementById('display').innerHTML = this.name;
+            }
+        }
+
+        let p = new display;
+
+        // document.getElementById('btn').addEventListener('click',p.dis)
+        document.getElementById('btn').addEventListener('click',p.disarrow)
+    </script>
+</body>
+
+</html>
