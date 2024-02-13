@@ -1,0 +1,4 @@
+function displayTextbox()
+{
+    document.getElementById
+}

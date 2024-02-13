@@ -82,27 +82,7 @@ const menu = [
 ];
 
 
-
-// let dis = menu.map(function (value) {
-
-//   return `  <article class="menu-item">
-// <img src=${value.img} alt="menu item" class="photo" />
-// <div class="item-info">
-//   <header>
-//     <h4>${value.title}</h4>
-//     <h4 class="price">${value.price}</h4>
-//   </header>
-//   <p class="item-text">
-//    ${value.desc}
-//   </p>
-// </div>
-// </article>
-// `
-
-// })
-// document.getElementById("menu").innerHTML = dis.join(" ");
 display(menu)
-
 
 // reduced function 
 let timing = menu.reduce(function (pre, value, index) {
@@ -118,7 +98,7 @@ document.getElementById("btn").innerHTML = timing.join(" ") + `<button type="but
 
 function HIGHtoLOW() {
   menu.sort(function (a, b) {
-    if (a.price > b.price ) {
+    if (a.price > b.price) {
       return -1;
     }
     else {
@@ -148,7 +128,7 @@ function filterdata(categroy) {
 
 
 function display(p) {
-  let dis = p.map(function (value) {
+  let dis = p.map(function (value, index) {
 
     return `  <article class="menu-item">
     <img src=${value.img} alt="menu item" class="photo" />
@@ -160,9 +140,32 @@ function display(p) {
     <p class="item-text">
     ${value.desc}
     </p>
+    <button class="filter-btn" data-id="all" onclick="AddtoCart(${index})">Add to Cart</button>
   </div>
   </article>
   `
   })
   document.getElementById("menu").innerHTML = dis.join(" ");
+}
+
+let cart = [];
+
+const AddtoCart = (index) => {
+  let selectedProduct = menu[index];
+
+  let obj = cart.find(function(value)
+  {
+    return value.items.id == selectedProduct.id;
+  })
+
+  if(!obj) 
+  {
+    cart.push({ items: selectedProduct, quantity: 1 })
+  }
+  else {
+    obj.quantity += 1;
+  }
+  console.log(cart)
+
+  document.getElementById('count').innerHTML = cart.length;
 }
