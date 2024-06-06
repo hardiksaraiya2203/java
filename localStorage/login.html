@@ -127,9 +127,17 @@
                 .then(y => y.json())
                 .then(y => {
 
+                    if(!y.message)
+                    {
+
                     localStorage.setItem("token", JSON.stringify(y));
 
-                    window.location.href = "account.html"
+                    window.location.href = "account.html";
+                    }
+                    else
+                    {
+                        alert("invalid");
+                    }
                 })
 
 

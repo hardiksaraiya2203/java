@@ -38,8 +38,6 @@ const reviews = [
   },
 ];
 
-let index = 0;
-let len = reviews.length-1;
 
 function display() {
   document.getElementById("person-img").src = reviews[index].img;
@@ -47,8 +45,10 @@ function display() {
   document.getElementById("author").innerHTML = reviews[index].name;
   document.getElementById("job").innerHTML = reviews[index].job;
   document.getElementById("info").innerHTML = reviews[index].text;
-
+  
 }
+let index = 0;
+let len = reviews.length-1;
 function next()
 {
   if (index==len){

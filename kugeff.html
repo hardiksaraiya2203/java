@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 51----65S -->
+    <script>
+
+        let vehicle = {
+            wheels: '4',
+            fuelType: 'Gasoline',
+            color: 'Green'
+        }
+        let carProps = {
+            type: {
+                value: 'Volkswagen'
+            },
+            model: {
+                value: 'Golf'
+            }
+        }
+
+        // prototype
+    
+        var car = Object.create(vehicle, carProps);
+        console.log(car);
+    </script>
+</body>
+
+</html>

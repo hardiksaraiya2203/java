@@ -148,24 +148,72 @@ function display(p) {
   document.getElementById("menu").innerHTML = dis.join(" ");
 }
 
+function totalprice() {
+  let total = cart.reduce(function (pre, curr) {
+
+    return pre + curr.items.price * curr.quantity;
+
+  }, 0);
+
+  document.getElementById('amt').innerHTML = '<b>Total:</b> ' + total;
+}
+
 let cart = [];
 
 const AddtoCart = (index) => {
   let selectedProduct = menu[index];
 
-  let obj = cart.find(function(value)
-  {
+  let obj = cart.find(function (value) {
     return value.items.id == selectedProduct.id;
   })
 
-  if(!obj) 
-  {
+  if (!obj) {
     cart.push({ items: selectedProduct, quantity: 1 })
+
   }
-  else {
-    obj.quantity += 1;
-  }
+
+  // else {
+  //   obj.quantity = obj.quantity + 1;
+  // }
   console.log(cart)
 
   document.getElementById('count').innerHTML = cart.length;
+}
+
+function mapCartItem() {
+  // console.log(cart)
+  let mapCartItem = cart.map(function (value,index) {
+    return `<div id="productImage">
+    <article class="menu-item">
+      <img src="${value.items.img}" alt="menu item" class="photo" />
+      <div class="item-info">
+        <header>
+          <h4>${value.items.title}</h4>
+          <h4 class="price">${value.items.price}</h4>
+        </header>
+      </div>
+    </article>
+  </div>
+  <br>
+  <div id="productQuantity">
+              <button class="_23FHuj" fdprocessedid="3hp15" onclick="decQty(${index})"> – </button>
+            <input type="text" class="_253qQJ" value="${value.quantity}" fdprocessedid="pecz9" id="inp">
+            <button class="_23FHuj" fdprocessedid="7l8pfo" onclick="incQty(${index})"> + </button>
+            </div><br>`
+  })
+
+  document.getElementById('totalAmount').innerHTML = mapCartItem.join(" ");
+}
+
+function incQty(index)
+{
+  cart[index].quantity = cart[index].quantity+1;
+
+  mapCartItem();
+}
+function decQty(index)
+{
+  cart[index].quantity = cart[index].quantity-1;
+
+  mapCartItem();
 }

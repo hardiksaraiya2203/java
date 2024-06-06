@@ -151,7 +151,6 @@
             <th>Subject 4</th>
             <th>Subject 5</th>
             <th>Subject 6</th>
-            <th>Total</th>
             <th>Percentage</th>
 
     </table>
@@ -181,15 +180,13 @@
                 sub4 : Sub4,
                 sub5 : Sub5,
                 sub6 : Sub6,
-                Sum   : sum,
-                percentage : Percentage,
-                
+                percentage : Percentage,         
             }
 
             info.push(h)
 
 
-            display()
+            display();
         }
 
         function display() {
@@ -202,7 +199,6 @@
                     <td>${value.sub4}</td>
                     <td>${value.sub5}</td>
                     <td>${value.sub6}</td>
-                    <td>${value.sum}</td>
                     <td>${value.percentage}</td></tr>`
             });
             document.getElementById("myTable").innerHTML =
@@ -215,7 +211,6 @@
             <th>Subject 4</th>
             <th>Subject 5</th>
             <th>Subject 6</th>
-            <th>Total</th>
             <th>Percentage</th>` +  d.join(" ");
 
         }
@@ -224,45 +219,3 @@
 
 
 </html>
-
-
-<!-- // if (Percentage < 35) { // document.getElementById("Class").innerHTML="Fail" ; // } // else if (Percentage>= 35 &&
-    Percentage <= 40) { // document.getElementById("Class").innerHTML="Pass" ; // } // else if (Percentage>= 40 &&
-        Percentage <= 50) { // document.getElementById("Class").innerHTML="Third Class" ; // } // else if (Percentage>=
-            50 && Percentage <= 60) { // document.getElementById("Class").innerHTML="Second Class" ; // } // else if
-                (Percentage>= 60 && Percentage <= 70) { // document.getElementById("Class").innerHTML="First Class" ; //
-                    } // else if (Percentage> 70) {
-                    // document.getElementById("Class").innerHTML = "Distinction";
-                    // } -->
-
-
-<!-- <td id="Roll-No.">
-        <div class="g"></div>
-    </td>
-    <td id="Sub-1">
-        <div class="g"></div>
-    </td>
-    <td id="Sub-2">
-        <div class="g"></div>
-    </td>
-    <td id="Sub-3">
-        <div class="g"></div>
-    </td>
-    <td id="Sub-4">
-        <div class="g"></div>
-    </td>
-    <td id="Sub-5">
-        <div class="g"></div>
-    </td>
-    <td id="Sub-6">
-        <div class="g"></div>
-    </td>
-    <td id="Total">
-        <div class="g"></div>
-    </td>
-    <td id="Percentage">
-        <div class="g"></div>
-    </td>
-    <td id="Class">
-        <div class="g"></div>
-    </td> -->
